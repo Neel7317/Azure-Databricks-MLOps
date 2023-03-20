@@ -204,7 +204,7 @@ jobs:
       with:
         inlineScript: |
           az group create --location 'EastUS2' --name 'Databricks-My-Dev'
-          az deployment group create --resource-group 'Databricks-My-Dev' --template-file $GITHUB_WORKSPACE/ARM-Templates/azuredeploy.databricks.json --parameters @$GITHUB_WORKSPACE/ARM-Templates/parameters.databricks.json --parameters workspaceName='Databricks-MyProject-MG-Dev'
+          az deployment group create --resource-group 'Databricks-My-Dev' --template-file $GITHUB_WORKSPACE/ARM-Templates/azuredeploy.databricks.json --parameters @$GITHUB_WORKSPACE/ARM-Templates/parameters.databricks.json --parameters workspaceName='Databricks-My-Dev'
     # Deploy Azure KeyVault
     - name: Deploy ARM Template (KeyVault)
       uses: azure/CLI@v1
@@ -333,7 +333,7 @@ jobs:
       with:
         inlineScript: |
           az group create --location 'EastUS2' --name 'Databricks-My-QA'
-          az deployment group create --resource-group 'Databricks-My-QA' --template-file $GITHUB_WORKSPACE/ARM-Templates/azuredeploy.databricks.json --parameters @$GITHUB_WORKSPACE/ARM-Templates/parameters.databricks.json --parameters workspaceName='Databricks-MyProject-MG-QA'
+          az deployment group create --resource-group 'Databricks-My-QA' --template-file $GITHUB_WORKSPACE/ARM-Templates/azuredeploy.databricks.json --parameters @$GITHUB_WORKSPACE/ARM-Templates/parameters.databricks.json --parameters workspaceName='Databricks-My-QA'
     # Deploy Azure KeyVault
     - name: Deploy ARM Template (KeyVault)
       uses: azure/CLI@v1
@@ -462,7 +462,7 @@ jobs:
       with:
         inlineScript: |
           az group create --location 'EastUS2' --name 'Databricks-My-Prod'
-          az deployment group create --resource-group 'Databricks-My-Prod' --template-file $GITHUB_WORKSPACE/ARM-Templates/azuredeploy.databricks.json --parameters @$GITHUB_WORKSPACE/ARM-Templates/parameters.databricks.json --parameters workspaceName='Databricks-MyProject-MG-Prod'
+          az deployment group create --resource-group 'Databricks-My-Prod' --template-file $GITHUB_WORKSPACE/ARM-Templates/azuredeploy.databricks.json --parameters @$GITHUB_WORKSPACE/ARM-Templates/parameters.databricks.json --parameters workspaceName='Databricks-My-Prod'
     # Deploy Azure KeyVault
     - name: Deploy ARM Template (KeyVault)
       uses: azure/CLI@v1
