@@ -3,16 +3,18 @@ dbutils.widgets.dropdown("Model Stage", "None", ["Production", "Staging","None"]
 
 # COMMAND ----------
 
+
 import mlflow
 
 registry_uri = f'databricks://modelregistery:modelregistery'
 mlflow.set_registry_uri(registry_uri)
-
+print("l")
 model_name = "power-forecasting-model"
-run_id='c9830cb0281842eb85cbb0dd9c14d896'
+run_id='4120d11ca3064be3a9534327edad25ee'
 # The default path where the MLflow autologging function stores the model
 artifact_path = "model"
 model_uri = "runs:/{run_id}/{artifact_path}".format(run_id=run_id, artifact_path=artifact_path)
+model_stage=dbutils.widgets.get("Model Stage")
 
 model_production_uri = "models:/{model_name}/{model_stage}".format(model_name=model_name,model_stage=dbutils.widgets.get("Model Stage"))
 
